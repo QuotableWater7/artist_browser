@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <title>Artist Exploration</title>
+  </head>
+  <body>
+    <!--  main body content  -->
+	<div id="wrap">
+		<div class="navbar">
+		  <div class="navbar-inner">
+			<span class="brand">Artist Exploration</span>
+			<form class="navbar-form pull-right">
+			<input type="text" id="artist" placeholder="Type an artist name..." />
+			<button type="button" id="search-artist" class="btn btn-small btn-primary">Search</button>  
+			<button type="button" id="reset-artist" class="btn btn-small btn-danger">Reset</button>
+		  </div>
+		</div>
+		<div class="container">
+		  <div class="row">
+			<div class="span12">
+			  <div id="credit">
+				<p>App by JT Bowler.  Uses <a href="http://the.echonest.com">The Echo Nest</a> API to gather similar artists.</p>
+				<p>Begin by typing an artist into the search box.</p>
+			  </div>
+			  
+			  <div id="results"></div>
+			</div>
+		  </div>
+		</div>
+		
+		<!--  templates  -->
+		<script type="underscore/template" id="artist-tmpl">
+		  <div class="artist-group active-group">
+			<ul class="no-bullet">
+			  <% for (i=0; i<artists.length; i++) { %>
+				<li><%= artists[i].name %></span></li>
+			  <% } %>
+			</ul>
+		  </div>
+		</script>
+	</div>
+	
+    <!--  load scripts  -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="js/echonest.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
